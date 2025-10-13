@@ -54,10 +54,512 @@
 
     <!-- Contenu principal -->
     <main class="mt-24">
-        <section class="text-center p-8">
-            <h1 class="text-3xl font-bold text-lime-700 mb-4">Faire un DON</h1>
-            <p class="text-gray-700">Le contenu principal viendra ici...</p>
-        </section>
+              <!-- Cartes 1 -->
+      <section
+        class="relative w-full min-h-screen bg-cover bg-center flex flex-col pb-40 items-start justify-start pt-[80px]"
+        style="background-image: url('src/assets/images/IMG_IPS_17.jpg');">
+
+        <div class="absolute inset-0 bg-black/70"></div>
+
+        <h1 class="relative text-3xl md:text-6xl font-semibold text-white mb-8 z-10 text-left max-w-4xl ml-12 leading-tight">
+          <span class="ml-20">Bâtir une jeunesse</span><br> résiliente , franc par franc
+        </h1>
+
+        <div class="relative z-10 flex justify-center w-full ml-15">
+          <div class="bg-white  shadow-xl w-full max-w-md min-h-[600px] overflow-hidden mr-200">
+
+            <h2 class="w-full text-2xl font-semibold text-white text-center bg-lime-600 py-3">
+              Mon Don
+            </h2>
+
+            <div class="p-6">
+              <div class="flex justify-between mb-6 space-x-4">
+                <button
+                  class="flex-1 py-3 px-4 text-center rounded-lg font-medium bg-amber-500 text-white  hover:bg-amber-600 transition-colors">
+                  Je donne tous les mois
+                </button>
+                <button
+                  class="flex-1 py-3 px-4 text-center rounded-lg font-medium bg-white text-black border border-gray-300 hover:bg-gray-50 transition-colors">
+                  Je fais un don ponctuel
+                </button>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <button
+                  class="py-3 px-4 rounded-lg border border-gray-300 text-black font-medium hover:bg-gray-50 transition-colors">
+                  15000F par mois
+                </button>
+                <button
+                  class="py-3 px-4 rounded-lg border border-gray-300 text-black font-medium hover:bg-gray-50 transition-colors">
+                  10000F par mois
+                </button>
+                <button
+                  class="py-3 px-4 rounded-lg border border-gray-300 text-black font-medium hover:bg-gray-50 transition-colors">
+                  5000F par mois
+                </button>
+                <button
+                  class="py-3 px-4 rounded-lg border border-gray-300 text-black font-medium hover:bg-gray-50 transition-colors">
+                  2000F par mois
+                </button>
+              </div>
+
+              <button
+                class="w-full py-3 px-4 rounded-lg border border-gray-300 text-black font-medium hover:bg-gray-50 transition-colors mb-6">
+                Autres montants
+              </button>
+
+              <button id="openModalBtn"
+                class="w-full py-4 px-4  bg-yellow-500 text-white text-lg font-semibold hover:bg-yellow-600 transition-colors">
+                Rejoignez-nous aujourd'hui
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Cartes 2-->
+      <div id="modalCoordonnees"
+        class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden transition-opacity duration-300">
+        <div class="rounded-lgshadow-2xl w-full max-w-lg p-6">
+
+          <div class="rounded-lg p-4 bg-white shadow-lg relative">
+
+            <button id="closeCoordonnees" class="absolute top-3 right-3 text-black hover:text-black text-2xl z-10">
+              &times;
+            </button>
+
+            <h2 class="text-white bg-lime-600 p-3 text-center font-bold text-xl rounded-t-lg -m-4 mb-4">
+              Mes coordonnées
+            </h2>
+
+            <div class="mb-4">
+              <label class="sr-only" for="email">Email</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                </div>
+                <input type="email" id="email" placeholder="Email"
+                  class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500" />
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <input type="checkbox" id="organisation" class="mr-2 text-green-600 focus:ring-green-500" />
+              <label for="organisation" class="text-sm text-black">
+                Je fais un don à une organisation ou d'une société.
+              </label>
+            </div>
+
+            <div class="flex space-x-3 mb-4">
+              <select class="w-1/3 py-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                <option>Civilité</option>
+                <option>M.</option>
+                <option>Mme</option>
+              </select>
+              <input type="text" placeholder="Prénom"
+                class="w-2/3 py-3 px-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500" />
+            </div>
+
+            <input type="text" placeholder="Nom"
+              class="w-full py-3 px-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 mb-4" />
+            <input type="text" placeholder="Adresse"
+              class="w-full py-3 px-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 mb-4" />
+
+            <div class="flex space-x-3 mb-6">
+              <input type="text" placeholder="Carte postale"
+                class="w-1/2 py-3 px-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500" />
+              <input type="text" placeholder="Ville"
+                class="w-1/2 py-3 px-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500" />
+            </div>
+
+            <p class="text-xs text-black mb-4">
+              Tous les champs sont obligatoires pour l'émission de votre reçu fiscal.
+            </p>
+
+            <button id="openPaiement"
+              class="w-full bg-yellow-500 text-white font-bold py-3 rounded-lg shadow-xl hover:bg-yellow-600 transition duration-300">
+              SUIVANT
+            </button>
+
+            <p class="text-xs text-black mt-4">
+              Paiement sécurisé. Ce site est protégé par reCAPTCHA et la politique de
+              Confidentialité et les conditions d'utilisation de Google s'appliquent.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cartes 3-->
+      <div id="modalPaiement" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md shadow-xl relative">
+          <button id="closePaiement" class="absolute top-3 right-3 text-black hover:text-black text-2xl">&times;</button>
+
+          <h2 class="text-white bg-lime-600 p-3 text-center font-bold text-xl rounded-t-lg -m-6 mb-4">Je règle mon don
+          </h2>
+
+          <div class="flex space-x-2 mb-6">
+            <div class="flex-1 border border-gray-300 p-4 rounded-lg text-center shadow-md">
+              <p class="text-sm">Par carte bancaire</p>
+            </div>
+            <div class="flex-1 border border-gray-300 p-4 rounded-lg text-center shadow-md">
+              <p class="text-sm">Transfert d'argent</p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-around space-x-2 mb-6">
+            <span class="text-blue-600 font-bold text-2xl">Moov</span>
+            <span class="text-orange-600 font-bold text-2xl">MTN</span>
+            <span class="text-green-600 font-bold text-2xl">Celtiis</span>
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg mb-6 text-sm text-black">
+            Merci d'avoir choisi notre mode de paiement préféré.
+          </div>
+
+          <div class=" mb-6 text-sm text-black">
+            Un petit groupe de donateurs prend en charge nos frais de transaction par carte de crédit afin que la
+            totalité de votre don soit reversée directement à l'eau potable. En connectant votre banque au lieu de payer
+            par carte, vous réduisez les frais et augmentez votre impact.
+          </div>
+
+          <button id="confirmPaiementBtn"
+            class="w-full bg-yellow-500 text-white font-bold py-3 rounded-lg shadow-xl hover:bg-yellow-600 transition duration-300">
+            PROCHAINE ÉTAPE
+          </button>
+
+          <div class=" mb-6 text-sm mt-10 text-black">
+            Paiement sécurisé. Ce site est protégé par reCAPTCHA et la politique de Confidentialité et les conditions
+            d’utilisation de Google s’appliquent.
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cartes 4 -->
+      <div id="modalConfirmation" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-0 w-full max-w-sm shadow-xl relative">
+          <button id="closeConfirmation"
+            class="absolute top-3 right-3 text-white hover:text-gray-200 text-2xl z-10">&times;</button>
+
+          <div class="bg-lime-600 text-white text-center py-4 relative">
+            <h1 class="text-xl font-semibold">Confirmation du paiement</h1>
+          </div>
+
+          <div class="p-6">
+
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-8 text-center">
+              <h2 class="text-lg font-semibold text-black mb-1">Merci ! Votre don a été validé.</h2>
+              <p class="text-sm text-black">Un reçu vous a été envoyé par email</p>
+            </div>
+
+            <div class="text-left mb-8">
+              <div class="flex items-center text-black font-semibold mb-4">
+                <svg class="w-5 h-5 mr-2 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                  </path>
+                </svg>
+                <span>Récapitulatif de votre don</span>
+              </div>
+
+              <div class="space-y-3">
+                <div class="flex justify-between pb-1">
+                  <span class="text-black">Montant :</span>
+                  <span class="font-medium text-black">15000 FCFA</span>
+                </div>
+                <div class="flex justify-between pb-1">
+                  <span class="text-black">Fréquence :</span>
+                  <span class="font-medium text-black">Mensuel</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-black">Mode de paiement :</span>
+                  <span class="font-medium text-black">MTN Mobile Money</span>
+                </div>
+              </div>
+            </div>
+
+            <button id="finalConfirmationBtn"
+              class="w-full bg-yellow-500 text-black font-bold py-3 rounded-lg hover:bg-yellow-600 transition duration-150 uppercase shadow-lg mb-4">
+              Confirmée !
+            </button>
+
+            <a href="index.html"
+              class="block text-center text-green-700 font-medium hover:text-green-900 transition duration-150">
+              <span class="flex items-center justify-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
+                  </path>
+                </svg>
+                Retour à l'accueil
+              </span>
+            </a>
+
+            <p class="text-xs text-center text-black mt-6">
+              Paiement sécurisé par Google reCAPTCHA
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cartes 5-->
+      <div id="modalFinalSuccess" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+        <div class="w-full max-w-lg bg-white shadow-xl rounded-lg overflow-hidden relative scale-95">
+
+          <button id="closeFinalSuccess"
+            class="absolute top-3 right-3 text-white hover:text-gray-200 text-2xl z-10">&times;</button>
+
+          <div class="bg-lime-500 text-white text-center py-3">
+            <h1 class="text-xl font-semibold">Don Réussi</h1>
+          </div>
+
+          <div class="p-5 text-center max-h-[80vh] overflow-y-auto">
+
+            <div class="mb-6">
+              <div class="mx-auto w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-3">
+                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+
+              <h2 class="text-lg font-bold text-black mb-1">Merci ! Vous faites la différence.</h2>
+              <p class="text-black text-sm">Votre soutien est validé. Merci pour votre générosité</p>
+            </div>
+
+            <div class="text-left mb-6">
+              <div class="flex items-center text-black font-semibold mb-3">
+                <svg class="w-5 h-5 mr-2 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                  </path>
+                </svg>
+                <span>Récapitulatif de votre don</span>
+              </div>
+
+              <div class="space-y-2 p-3 bg-gray-50 rounded-lg">
+                <div class="flex justify-between border-b pb-1 text-sm">
+                  <span class="text-black">Montant :</span>
+                  <span class="font-medium text-black">15000 FCFA</span>
+                </div>
+                <div class="flex justify-between border-b pb-1 text-sm">
+                  <span class="text-black">Fréquence :</span>
+                  <span class="font-medium text-black">Mensuel</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                  <span class="text-black">Mode de paiement :</span>
+                  <span class="font-medium text-black">MTN Mobile Money</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-left space-y-3 mb-6 text-sm text-black">
+              <div class="flex items-start">
+                <svg class="w-5 h-5 mt-0.5 mr-2 flex-shrink-0 text-yellow-500" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                  </path>
+                </svg>
+                <p>Un reçu mail a été envoyé à <span
+                    class="font-semibold text-lime-600 break-all">lizahoglele08@gmail.com</span></p>
+              </div>
+
+              <div class="flex items-start">
+                <svg class="w-5 h-5 mt-0.5 mr-2 flex-shrink-0 text-yellow-500" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14v10a2 2 0 01-2 2H7a2 2 0 01-2-2V9z"></path>
+                </svg>
+                <p>Votre premier prélèvement sera effectué aujourd'hui</p>
+              </div>
+            </div>
+
+            <a href="index.html">
+              <button
+                class="w-full bg-yellow-500 text-black font-bold py-3 rounded-lg hover:bg-yellow-600 transition duration-150 uppercase shadow-lg">
+                Retour à la page d'accueil
+              </button>
+            </a>
+
+            <p class="text-xs text-center text-black mt-3">
+              Paiement sécurisé par Google reCAPTCHA
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- section-->
+      <section class="bg-gray-50 py-16 md:py-20 relative">
+        <div class="max-w-8xl px-4">
+          <div class="absolute inset-x-0 -top-16 md:-top-20 z-10">
+            <div class="bg-white max-w-4xl  mx-auto p-6 md:p-8 shadow-xl text-center border border-gray-100">
+              <p class="text-xl md:text-2xl font-semibold text-black mb-2">
+                Faites un don à IPS et marquer la différence.
+              </p>
+              <p class="text-black text-base">
+                Découvrez comment votre don aide chaque enfant
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="py-16 px-4 w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Où va votre don?</h2>
+
+        <div class="space-y-6 text-black  text-lg">
+          <p>Chaque franc est un investissement direct dans la jeunesse de Pobè et Kétou
+            Chez l'Institut pour le Progrès Social (IPS), la transparence est au cœur de notre modèle. Votre
+            contribution est gérée avec la plus grande rigueur et est directement affectée à la mise en œuvre de nos
+            programmes de Recherche-Action sur le terrain. Voici où votre soutien fait la différence, assurant
+            l'efficacité maximale de votre générosité <br>
+            Chaque franc est un investissement direct dans la jeunesse de Pobè et Kétou
+            Chez l'Institut pour le Progrès Social (IPS), la transparence est au cœur de notre modèle. Votre
+            contribution est gérée avec la plus grande rigueur et est directement affectée à la mise en œuvre de nos
+            programmes de Recherche-Action sur le terrain. Voici où votre soutien fait la différence, assurant
+            l'efficacité maximale de votre générosité
+
+          </p>
+
+        </div>
+      </section>
+
+      <section class="py-12 px-4 w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="grid grid-cols-2 gap-y-10 gap-x-8 text-center">
+
+            <div>
+              <p class="text-5xl font-extrabold text-amber-500">75%</p>
+              <p class="text-base text-black font-semibold mt-2">Pour action/terrain directe.</p>
+            </div>
+
+            <div>
+              <p class="text-5xl font-extrabold text-amber-500">15%</p>
+              <p class="text-base text-black font-semibold mt-2">pour la qualification et l'éducation</p>
+            </div>
+
+            <div>
+              <p class="text-5xl font-bold text-amber-500">45%</p>
+              <p class="text-sm text-black mt-1">pour les frais de fonctionnement en...</p>
+            </div>
+
+            <div>
+              <p class="text-5xl font-bold text-amber-500">52%</p>
+              <p class="text-sm text-black mt-1">pour les frais de fonctionnement de...</p>
+            </div>
+          </div>
+
+          <div class="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
+            <img src="src/assets/images/IMG_IPS_18.jpg" alt="Mains jointes en cercle" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-4 w-5xl mx-auto">
+        <div class="space-y-4">
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button id="q-1"
+              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
+              aria-expanded="false" aria-controls="a-1">
+              <span>1. Comment mon don sera-t-il utilisé concrètement par MRS ?</span>
+              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div id="a-1" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
+              <p class="text-black">Votre don est directement acheminé vers les programmes d'action et de
+                recherche, conformément aux pourcentages que nous avons affichés ci-dessus. Nous assurons une
+                transparence totale sur l'utilisation de chaque franc.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button id="q-2"
+              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
+              aria-expanded="false" aria-controls="a-2">
+              <span>2. Le paiement de mon don est-il sécurisé ?</span>
+              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div id="a-2" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
+              <p class="text-black">Absolument. Toutes nos transactions sont traitées par des prestataires de
+                services de paiement reconnus (comme Stripe ou Paypal), garantissant un cryptage et une sécurité de
+                niveau bancaire pour vos informations.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button id="q-3"
+              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
+              aria-expanded="false" aria-controls="a-3">
+              <span>3. Vais-je recevoir un reçu ou une preuve de mon don ?</span>
+              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div id="a-3" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
+              <p class="text-black">Oui, un reçu officiel vous sera envoyé par courriel immédiatement après la
+                confirmation de votre don. Ce reçu peut être utilisé pour les déductions fiscales, conformément à la
+                loi en vigueur.</p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button id="q-4"
+              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
+              aria-expanded="false" aria-controls="a-4">
+              <span>4. Puis-je annuler ou modifier mon don mensuel si je change d'avis ?</span>
+              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div id="a-4" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
+              <p class="text-black">Bien sûr. Vous pouvez modifier, suspendre ou annuler votre don mensuel à tout
+                moment en accédant à votre portail de donateurs ou en contactant directement notre service client.
+              </p>
+            </div>
+          </div>
+
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button id="q-5"
+              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
+              aria-expanded="false" aria-controls="a-5">
+              <span>5. L'IRS est-elle une organisation légalement reconnue ?</span>
+              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div id="a-5" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
+              <p class="text-black">Oui. Nous sommes un organisme de bienfaisance enregistré (numéro
+                d'enregistrement 123456789RR0001) et opérons conformément à toutes les lois et réglementations en
+                vigueur au Canada/Québec.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </main>
 
     <!-- Footer (inchangé) -->
@@ -243,6 +745,269 @@
             navMenu.classList.toggle("hidden");
             navMenu.classList.toggle("flex");
         });
+    </script>
+
+        <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // ========================= MENU MOBILE =========================
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const blurHeader = document.getElementById('blurHeader');
+
+        menuBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('hidden');
+          navMenu.classList.toggle('flex');
+        });
+
+        // ========================= PAGINATION & FILTERING (LAISSEZ CE CODE POUR LES AUTRES PAGES) =========================
+        const projectsContainer = document.getElementById('projects-container');
+        if (projectsContainer) { // S'assure que ces éléments n'exécutent que sur les pages de projets
+          const projectCards = projectsContainer.querySelectorAll('.project-card');
+          const filterButtons = document.querySelectorAll('.filter-btn');
+          const prevButton = document.getElementById('prevButton');
+          const nextButton = document.getElementById('nextButton');
+          const pageNumbersContainer = document.getElementById('pageNumbers');
+
+          const itemsPerPage = 6;
+          let currentPage = 1;
+          let currentFilter = 'all';
+
+          // Fonction pour mettre à jour l'affichage des cartes et de la pagination
+          function updateDisplay() {
+            let filteredCards = Array.from(projectCards).filter(card => {
+              const category = card.getAttribute('data-category');
+              const page = parseInt(card.getAttribute('data-page'));
+
+              // Check filter: 'all' or category matches
+              const filterMatch = currentFilter === 'all' || category === currentFilter;
+
+              // Check pagination: only show the current page
+              const pageMatch = page === currentPage;
+
+              // Hide/Show based on filter match and pagination match
+              if (filterMatch && pageMatch) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+
+              // Return filterMatch to calculate total pages correctly
+              return filterMatch;
+            });
+
+            // Recalculer le total des pages en utilisant UNIQUEMENT les cartes filtrées
+            const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+
+            // Gérer l'état des boutons Précédent/Suivant
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage >= totalPages;
+
+
+            // Mettre à jour les numéros de page
+            pageNumbersContainer.innerHTML = '';
+            for (let i = 1; i <= totalPages; i++) {
+              const pageButton = document.createElement('button');
+              pageButton.textContent = i;
+              pageButton.classList.add('px-3', 'py-1', 'rounded', 'font-semibold', 'transition', 'duration-150');
+
+              if (i === currentPage) {
+                pageButton.classList.add('bg-amber-500', 'text-white');
+                pageButton.classList.remove('bg-gray-100', 'text-black', 'hover:bg-gray-200');
+              } else {
+                pageButton.classList.add('bg-gray-100', 'text-black', 'hover:bg-gray-200');
+                pageButton.addEventListener('click', function () {
+                  currentPage = i;
+                  updateDisplay();
+                  document.getElementById('projects-container').scrollIntoView({ behavior: 'smooth' });
+                });
+              }
+              pageNumbersContainer.appendChild(pageButton);
+            }
+
+            // S'assurer que currentPage ne dépasse pas totalPages après un changement de filtre
+            if (currentPage > totalPages && totalPages > 0) {
+              currentPage = totalPages;
+              updateDisplay();
+            } else if (totalPages === 0) {
+              // Optionnel: Afficher un message si aucun résultat n'est trouvé
+            }
+          }
+
+
+          // ========================= FILTRAGE =========================
+
+          filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+              // Désactiver l'ancien bouton actif
+              const activeBtn = document.querySelector('.filter-btn.active');
+              if (activeBtn) {
+                activeBtn.classList.remove('active', 'bg-[#4B9B00]', 'text-white');
+                activeBtn.classList.add('bg-gray-100', 'text-black');
+              }
+
+              // Activer le nouveau bouton
+              this.classList.add('active', 'bg-[#4B9B00]', 'text-white');
+              this.classList.remove('bg-gray-100', 'text-black');
+
+              currentFilter = this.getAttribute('data-filter');
+              currentPage = 1; // Toujours revenir à la page 1 après un filtre
+              updateDisplay();
+              document.getElementById('projects-container').scrollIntoView({ behavior: 'smooth' });
+            });
+          });
+
+          // Clic sur Précédent
+          prevButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentPage > 1) {
+              currentPage--;
+              updateDisplay();
+              document.getElementById('projects-container').scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+
+          // Clic sur Suivant
+          nextButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Recalculer le total des pages en fonction du filtre actuel
+            const totalPages = Math.ceil(
+              Array.from(projectCards).filter(card => {
+                const category = card.getAttribute('data-category');
+                return currentFilter === 'all' || category === currentFilter;
+              }).length / itemsPerPage
+            );
+
+            if (currentPage < totalPages) {
+              currentPage++;
+              updateDisplay();
+              document.getElementById('projects-container').scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+
+          // ========================= INITIALISATION =========================
+
+          // Afficher la configuration initiale (tous les projets, page 1)
+          updateDisplay();
+        }
+      });
+
+      // --- Blur Header au scroll ---
+      function toggleHeaderBlur() {
+        const header = document.getElementById('blurHeader');
+        const scrollThreshold = 50;
+        const blurClasses = ['bg-white/10', 'backdrop-blur-md', 'border-white'];
+        const defaultClasses = ['bg-gray-50', 'border-b', 'border-gray-200'];
+
+        if (window.scrollY > scrollThreshold) {
+          defaultClasses.forEach(cls => header.classList.remove(cls));
+          blurClasses.forEach(cls => header.classList.add(cls));
+        } else {
+          blurClasses.forEach(cls => header.classList.remove(cls));
+          defaultClasses.forEach(cls => header.classList.add(cls));
+        }
+      }
+
+      window.addEventListener('scroll', toggleHeaderBlur);
+      toggleHeaderBlur();
+
+      // --- Menu Burger ---
+      const menuBtn = document.getElementById('menuBtn');
+      const navMenu = document.getElementById('navMenu');
+
+      menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+        navMenu.classList.toggle('flex');
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const openModalBtn = document.getElementById("openModalBtn");
+        // ID CORRIGÉS pour correspondre au HTML et à la logique du script
+        const modalCoordonnees = document.getElementById("modalCoordonnees");
+        const closeModalBtn = document.getElementById("closeCoordonnees");
+
+        const openPaiement = document.getElementById("openPaiement");
+        const modalPaiement = document.getElementById("modalPaiement");
+        const closePaiement = document.getElementById("closePaiement");
+
+        // ÉLÉMENTS POUR LA CONFIRMATION
+        const confirmPaiementBtn = document.getElementById("confirmPaiementBtn");
+        const modalConfirmation = document.getElementById("modalConfirmation");
+        const closeConfirmation = document.getElementById("closeConfirmation");
+
+        // NOUVEAUX ÉLÉMENTS AJOUTÉS POUR LE SUCCÈS FINAL
+        const finalConfirmationBtn = document.getElementById("finalConfirmationBtn");
+        const modalFinalSuccess = document.getElementById("modalFinalSuccess");
+        const closeFinalSuccess = document.getElementById("closeFinalSuccess");
+
+        // Helper pour toggle
+        const show = el => el && el.classList.remove('hidden');
+        const hide = el => el && el.classList.add('hidden');
+
+        // Ouvre le modal des coordonnées
+        if (openModalBtn && modalCoordonnees) {
+          openModalBtn.addEventListener('click', () => {
+            show(modalCoordonnees);
+          });
+        }
+
+        // Ferme le modal coordonnées (avec le bouton X)
+        const closeCoordonnees = document.getElementById("closeCoordonnees");
+        if (closeCoordonnees) {
+          closeCoordonnees.addEventListener('click', () => hide(modalCoordonnees));
+        }
+
+
+        // Passe au modal de paiement (SUIVANT)
+        if (openPaiement && modalCoordonnees && modalPaiement) {
+          openPaiement.addEventListener('click', (e) => {
+            e.preventDefault(); // au cas où c'est dans un form
+            hide(modalCoordonnees);
+            show(modalPaiement);
+          });
+        }
+
+        // Ferme le modal paiement
+        if (closePaiement && modalPaiement) {
+          closePaiement.addEventListener('click', () => hide(modalPaiement));
+        }
+
+        // Passe au modal de confirmation (PROCHAINE ÉTAPE)
+        if (confirmPaiementBtn && modalPaiement && modalConfirmation) {
+          confirmPaiementBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            hide(modalPaiement);
+            show(modalConfirmation);
+          });
+        }
+
+        // NOUVEAU: Passe au modal de succès final (Confirmée !)
+        if (finalConfirmationBtn && modalConfirmation && modalFinalSuccess) {
+          finalConfirmationBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            hide(modalConfirmation);
+            show(modalFinalSuccess);
+          });
+        }
+
+        // Ferme le modal de confirmation (via le 'X')
+        if (closeConfirmation && modalConfirmation) {
+          closeConfirmation.addEventListener('click', () => hide(modalConfirmation));
+        }
+
+        // Ferme le modal de succès final (via le 'X')
+        if (closeFinalSuccess && modalFinalSuccess) {
+          closeFinalSuccess.addEventListener('click', () => hide(modalFinalSuccess));
+        }
+
+
+        // Clique en dehors pour fermer (sur chaque modal)
+        [modalCoordonnees, modalPaiement, modalConfirmation, modalFinalSuccess].forEach(m => { // Ajout du nouveau modal
+          if (!m) return;
+          m.addEventListener('click', (e) => {
+            if (e.target === m) hide(m);
+          });
+        });
+      });
     </script>
 </body>
 
