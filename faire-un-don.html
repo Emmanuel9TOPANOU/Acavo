@@ -464,96 +464,83 @@
         </div>
       </section>
 
-      <section class="py-16 px-4 w-5xl mx-auto">
-        <div class="space-y-4">
+      <section class="max-w-4xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-semibold text-center mb-10">Foire aux questions</h2>
 
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button id="q-1"
-              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
-              aria-expanded="false" aria-controls="a-1">
-              <span>1. Comment mon don sera-t-il utilisé concrètement par MRS ?</span>
-              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
+        <div class="space-y-4" id="faq">
+
+          <!-- FAQ 1 -->
+          <div class="bg-white rounded-xl shadow p-6 cursor-pointer transition hover:shadow-lg" data-faq>
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold">1. Comment mon don est-il utilisé concrètement par l'IPS ?</h3>
+              <svg class="w-5 h-5 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            <div id="a-1" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
-              <p class="text-black">Votre don est directement acheminé vers les programmes d'action et de
-                recherche, conformément aux pourcentages que nous avons affichés ci-dessus. Nous assurons une
-                transparence totale sur l'utilisation de chaque franc.</p>
+            </div>
+            <div class="mt-3 hidden text-gray-600 leading-relaxed">
+              Votre don est directement investi dans nos programmes de Recherche-Action et de développement communautaire dans les zones frontalières de Pobè et Kétou.
+              Typiquement, 90 % des fonds collectés vont aux actions sur le terrain (achat de fournitures scolaires, impression du Livret Civique, formations professionnelles)
+              et 10 % sont dédiés aux frais de fonctionnement essentiels (audit, administration, communication de l'impact).
             </div>
           </div>
 
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button id="q-2"
-              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
-              aria-expanded="false" aria-controls="a-2">
-              <span>2. Le paiement de mon don est-il sécurisé ?</span>
-              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
+          <!-- FAQ 2 -->
+          <div class="bg-white rounded-xl shadow p-6 cursor-pointer transition hover:shadow-lg" data-faq>
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold">2. Le paiement de mon don est-il sécurisé ?</h3>
+              <svg class="w-5 h-5 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            <div id="a-2" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
-              <p class="text-black">Absolument. Toutes nos transactions sont traitées par des prestataires de
-                services de paiement reconnus (comme Stripe ou Paypal), garantissant un cryptage et une sécurité de
-                niveau bancaire pour vos informations.</p>
+            </div>
+            <div class="mt-3 hidden text-gray-600 leading-relaxed">
+              Absolument. La sécurité de vos transactions est notre priorité. Nous utilisons les plateformes Mobile Money (Moov Africa, MTN)
+              et les Cartes Bancaires avec cryptage SSL/HTTPS. Aucune information de paiement n’est stockée sur nos serveurs.  
+              Vos données sont traitées de manière confidentielle et conformes à notre politique de confidentialité.
             </div>
           </div>
 
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button id="q-3"
-              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
-              aria-expanded="false" aria-controls="a-3">
-              <span>3. Vais-je recevoir un reçu ou une preuve de mon don ?</span>
-              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
+          <!-- FAQ 3 -->
+          <div class="bg-white rounded-xl shadow p-6 cursor-pointer transition hover:shadow-lg" data-faq>
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold">3. Vais-je recevoir un reçu ou une preuve de mon don ?</h3>
+              <svg class="w-5 h-5 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            <div id="a-3" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
-              <p class="text-black">Oui, un reçu officiel vous sera envoyé par courriel immédiatement après la
-                confirmation de votre don. Ce reçu peut être utilisé pour les déductions fiscales, conformément à la
-                loi en vigueur.</p>
+            </div>
+            <div class="mt-3 hidden text-gray-600 leading-relaxed">
+              Oui, immédiatement. Après la confirmation de votre paiement, une page de succès affichera votre numéro de transaction unique.
+              Un reçu détaillé vous sera aussi envoyé automatiquement par email à l’adresse fournie.
             </div>
           </div>
 
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button id="q-4"
-              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
-              aria-expanded="false" aria-controls="a-4">
-              <span>4. Puis-je annuler ou modifier mon don mensuel si je change d'avis ?</span>
-              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
+          <!-- FAQ 4 -->
+          <div class="bg-white rounded-xl shadow p-6 cursor-pointer transition hover:shadow-lg" data-faq>
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold">4. Puis-je annuler ou modifier mon don mensuel si je change d’avis ?</h3>
+              <svg class="w-5 h-5 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            <div id="a-4" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
-              <p class="text-black">Bien sûr. Vous pouvez modifier, suspendre ou annuler votre don mensuel à tout
-                moment en accédant à votre portail de donateurs ou en contactant directement notre service client.
-              </p>
+            </div>
+            <div class="mt-3 hidden text-gray-600 leading-relaxed">
+              Oui, vous pouvez modifier ou annuler votre don à tout moment en contactant notre équipe à l’adresse
+              <a href="mailto:contact@ips.org" class="text-green-700 font-medium hover:underline">contact@ips.org</a>.
+              Aucun frais supplémentaire ne sera appliqué.
             </div>
           </div>
 
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <button id="q-5"
-              class="accordion-button w-full flex justify-between items-center p-5 bg-white text-black font-semibold hover:bg-gray-50 transition"
-              aria-expanded="false" aria-controls="a-5">
-              <span>5. L'IRS est-elle une organisation légalement reconnue ?</span>
-              <svg class="w-5 h-5 transition-transform duration-300 transform" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
+          <!-- FAQ 5 -->
+          <div class="bg-white rounded-xl shadow p-6 cursor-pointer transition hover:shadow-lg" data-faq>
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold">5. L'IPS est-elle une organisation légalement reconnue ?</h3>
+              <svg class="w-5 h-5 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            <div id="a-5" class="accordion-content p-5 border-t border-gray-200 bg-gray-50 hidden">
-              <p class="text-black">Oui. Nous sommes un organisme de bienfaisance enregistré (numéro
-                d'enregistrement 123456789RR0001) et opérons conformément à toutes les lois et réglementations en
-                vigueur au Canada/Québec.</p>
+            </div>
+            <div class="mt-3 hidden text-gray-600 leading-relaxed">
+              Oui. L'Institut pour le Progrès Social (IPS) est une association légalement constituée et enregistrée au 
+              Bénin, agissant conformément à la législation en vigueur. Nous nous engageons à une transparence totale de 
+              nos actions, comme en témoignent nos Rapports Annuels et Financiers disponibles dans la section "Transparence" 
+              de notre site web
             </div>
           </div>
 
@@ -747,7 +734,7 @@
         });
     </script>
 
-        <script>
+    <script>
       document.addEventListener('DOMContentLoaded', function () {
         // ========================= MENU MOBILE =========================
         const menuBtn = document.getElementById('menuBtn');
@@ -1009,6 +996,35 @@
         });
       });
     </script>
+
+          <script>
+        // Gestion de l’accordéon
+        document.querySelectorAll("[data-faq]").forEach((faq) => {
+          const content = faq.querySelector("div.mt-3");
+          const icon = faq.querySelector("svg");
+
+          faq.addEventListener("click", () => {
+            const isOpen = !content.classList.contains("hidden");
+
+            // Ferme les autres FAQ
+            document.querySelectorAll("[data-faq]").forEach((item) => {
+              item.querySelector("div.mt-3").classList.add("hidden");
+              item.querySelector("svg").classList.remove("rotate-180");
+            });
+
+            // Ouvre celle cliquée
+            if (!isOpen) {
+              content.classList.remove("hidden");
+              icon.classList.add("rotate-180");
+            } else {
+              content.classList.add("hidden");
+              icon.classList.remove("rotate-180");
+            }
+          });
+        });
+      </script>
+
+
 </body>
 
 </html>
