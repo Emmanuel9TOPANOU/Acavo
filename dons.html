@@ -230,12 +230,29 @@
                         </div>
                     </div>
 
-                
+                    <!-- Bouton de validation : Toujours à l'intérieur du formulaire et avec une marge basse -->
+                    <div class="pt-4 pb-2">
+                        <button type="submit" id="submitBtn"
+                            class="relative w-full group overflow-hidden bg-gradient-to-r from-[#FAB43D] to-[#FF9D2E] text-white font-black py-5 rounded-2xl shadow-[0_10px_25px_-5px_rgba(250,180,61,0.4)] transition-all duration-300 transform active:scale-[0.96]">
+                            
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
+                            
+                            <span class="relative flex items-center justify-center gap-3 text-base uppercase tracking-[0.15em]">
+                                Confirmer le don
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
+
+
+
 
 <style>
     @keyframes fadeIn {
@@ -250,6 +267,13 @@
         .xs\:inline { display: none; }
     }
 </style>
+
+
+
+
+
+
+
 
 
 
