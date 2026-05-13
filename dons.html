@@ -141,11 +141,11 @@
     </section>
 
 
-
 <section class="py-10 md:py-24 bg-[#F8FAFB]">
     <div class="max-w-4xl mx-auto px-4 md:px-6">
-        <div class="bg-white shadow-2xl shadow-gray-200/60 rounded-[2rem] overflow-hidden border border-gray-100">
-            <!-- Header avec padding réduit sur mobile -->
+        <!-- Correction : Remplacement de overflow-hidden par overflow-visible pour éviter de couper le bouton sur petit écran -->
+        <div class="bg-white shadow-2xl shadow-gray-200/60 rounded-[2rem] border border-gray-100 overflow-visible">
+            
             <div class="p-6 md:p-12">
                 <h2 class="text-xl md:text-3xl font-extrabold text-[#53899A] text-center mb-8 leading-snug">
                     Faites un don pour nous soutenir dans notre mission
@@ -157,12 +157,12 @@
                         <p class="font-bold text-[#53899A] mb-2 uppercase text-[10px] tracking-widest opacity-80">Informations personnelles</p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                             <input type="text" id="donorNom" required placeholder="Nom"
-                                class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm md:text-base">
+                                class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
                             <input type="text" id="donorPrenom" required placeholder="Prénom"
-                                class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm md:text-base">
+                                class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
                         </div>
                         <input type="email" id="donorEmail" required placeholder="Email"
-                            class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm md:text-base">
+                            class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
                     </div>
 
                     <!-- Moyen de paiement -->
@@ -172,114 +172,79 @@
                         <!-- Onglets responsifs -->
                         <div class="flex bg-gray-100 p-1.5 rounded-2xl gap-1">
                             <button type="button" id="btnMobile" onclick="switchTab('mobile')"
-                                class="flex-1 flex items-center justify-center gap-2 bg-white py-3 md:py-4 rounded-xl shadow-sm font-bold text-xs md:text-sm transition-all text-[#53899A]">
-                                📱 <span class="hidden xs:inline">Mobile Money</span><span class="xs:hidden">Mobile</span>
+                                class="flex-1 flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm font-bold text-xs transition-all text-[#53899A]">
+                                📱 Mobile Money
                             </button>
                             <button type="button" id="btnCard" onclick="switchTab('card')"
-                                class="flex-1 flex items-center justify-center gap-2 py-3 md:py-4 rounded-xl font-bold text-xs md:text-sm text-gray-500 hover:text-gray-700 transition-all">
-                                🌐 <span class="hidden xs:inline">Carte / PayPal</span><span class="xs:hidden">Carte</span>
+                                class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-xs text-gray-500 hover:text-gray-700 transition-all">
+                                🌐 Carte / PayPal
                             </button>
                         </div>
 
                         <!-- Vue Mobile Money -->
                         <div id="viewMobile" class="space-y-6 animate-fade-in">
-                            <!-- Grille d'opérateurs mieux espacée sur mobile -->
-                            <div class="grid grid-cols-3 gap-2 md:gap-4">
-                                <div onclick="selectOperator(this, 'MTN')"
-                                    class="operator-card border-2 border-[#53899A] bg-[#F1F7F9] rounded-2xl p-3 md:p-5 flex flex-col items-center gap-2 cursor-pointer transition-all shadow-sm">
-                                    <img src="src/assets/images/img20.png" alt="MTN" class="h-8 md:h-12 w-auto object-contain">
-                                    <span class="text-[8px] md:text-[10px] font-black text-gray-600 uppercase text-center leading-none">MTN MoMo</span>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div onclick="selectOperator(this, 'MTN')" class="operator-card border-2 border-[#53899A] bg-[#F1F7F9] rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img20.png" alt="MTN" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">MTN</span>
                                 </div>
-                                <div onclick="selectOperator(this, 'Moov')"
-                                    class="operator-card border-2 border-transparent bg-white rounded-2xl p-3 md:p-5 flex flex-col items-center gap-2 cursor-pointer hover:border-gray-200 transition-all shadow-sm">
-                                    <img src="src/assets/images/img21.jpg" alt="Moov" class="h-8 md:h-12 w-auto object-contain">
-                                    <span class="text-[8px] md:text-[10px] font-black text-gray-600 uppercase text-center leading-none">Moov Money</span>
+                                <div onclick="selectOperator(this, 'Moov')" class="operator-card border-2 border-transparent bg-white rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img21.jpg" alt="Moov" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">Moov</span>
                                 </div>
-                                <div onclick="selectOperator(this, 'Celtiis')"
-                                    class="operator-card border-2 border-transparent bg-white rounded-2xl p-3 md:p-5 flex flex-col items-center gap-2 cursor-pointer hover:border-gray-200 transition-all shadow-sm">
-                                    <img src="src/assets/images/img22.png" alt="Celtiis" class="h-8 md:h-12 w-auto object-contain">
-                                    <span class="text-[8px] md:text-[10px] font-black text-gray-600 uppercase text-center leading-none">Celtiis Cash</span>
+                                <div onclick="selectOperator(this, 'Celtiis')" class="operator-card border-2 border-transparent bg-white rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img22.png" alt="Celtiis" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">Celtiis</span>
                                 </div>
                             </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="space-y-2">
-                                    <label id="labelNumber" class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Numéro MTN</label>
-                                    <input type="tel" placeholder="XX XX XX XX XX"
-                                        class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] bg-gray-50 transition-all text-sm">
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Montant (FCFA)</label>
-                                    <input type="number" placeholder="Ex: 5000"
-                                        class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] bg-gray-50 text-sm">
-                                </div>
+                            <div class="grid grid-cols-1 gap-4">
+                                <input type="tel" placeholder="Numéro de téléphone" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none bg-gray-50 text-sm">
+                                <input type="number" placeholder="Montant (FCFA)" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] bg-gray-50 text-sm">
                             </div>
                         </div>
 
                         <!-- Vue Carte -->
                         <div id="viewCard" class="hidden animate-fade-in space-y-6">
-                            <div class="bg-gray-50 border border-gray-100 rounded-[1.5rem] p-5 md:p-8">
-                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 text-center sm:text-left">
-                                    <span class="text-sm font-bold text-[#53899A]">Détails de la carte</span>
-                                    <div class="flex items-center justify-center gap-2 bg-white p-2 rounded-lg shadow-sm w-fit mx-auto sm:mx-0">
-                                        <img src="src/assets/images/visa.png" alt="Visa" class="h-4">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-4">
+                            <div class="bg-gray-50 border border-gray-100 rounded-[1.5rem] p-5">
+                                <div class="space-y-4">
+                                    <input type="text" placeholder="Numéro de carte" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <input type="text" placeholder="MM / AA" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm text-center">
+                                        <input type="password" placeholder="CVV" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm text-center">
                                     </div>
+                                    <input type="number" placeholder="Montant" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] text-sm">
+                                    <select class="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 outline-none font-bold text-gray-600 text-sm appearance-none">
+                                        <option>EUR - Euro (€)</option>
+                                        <option>USD - Dollar ($)</option>
+                                        <option>XOF - Franc CFA (CFA)</option>
+                                    </select>
                                 </div>
-                              <div class="space-y-4">
-    <!-- Numéro de carte -->
-    <input type="text" placeholder="Numéro de carte"
-        class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm transition-all">
-
-    <!-- Date et CVV -->
-    <div class="grid grid-cols-2 gap-4">
-        <input type="text" placeholder="MM / AA"
-            class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm text-center transition-all">
-        <input type="password" placeholder="CVV"
-            class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm text-center transition-all">
-    </div>
-
-    <!-- Montant (Pleine largeur) -->
-    <div class="space-y-2">
-        <label class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Montant du don</label>
-        <input type="number" placeholder="Entrez le montant"
-            class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] text-sm transition-all bg-white">
-    </div>
-
-    <!-- Choix de la Devise (Pleine largeur pour plus de clarté) -->
-    <div class="space-y-2">
-        <label class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Devise</label>
-        <select class="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 outline-none font-bold text-gray-600 text-sm cursor-pointer focus:border-[#53899A] transition-all appearance-none">
-            <option>EUR - Euro (€)</option>
-            <option>USD - Dollar ($)</option>
-            <option>XOF - Franc CFA (CFA)</option>
-        </select>
-    </div>
-</div>
                             </div>
-                            <div class="text-center">
-                                <p class="text-[10px] text-gray-400 mb-4 uppercase tracking-[0.2em]">Paiement express</p>
-                                <button type="button" onclick="handlePayPal()" class="w-full bg-white hover:bg-gray-50 border border-gray-200 py-4 rounded-xl transition-all flex items-center justify-center group shadow-sm">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-6 group-hover:scale-105 transition-transform" alt="PayPal">
+                            <!-- PayPal Intégré proprement -->
+                            <div class="pt-2">
+                                <p class="text-[10px] text-gray-400 mb-3 text-center uppercase tracking-widest">Ou payer via</p>
+                                <button type="button" class="w-full bg-white border border-gray-200 py-4 rounded-xl flex items-center justify-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-6" alt="PayPal">
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                   <!-- Bouton de validation optimisé pour mobile -->
-<button type="submit" id="submitBtn"
-    class="relative w-full group overflow-hidden bg-gradient-to-r from-[#FAB43D] to-[#FF9D2E] text-white font-black py-5 rounded-2xl shadow-[0_10px_25px_-5px_rgba(250,180,61,0.4)] transition-all duration-300 transform active:scale-[0.96] hover:shadow-[0_15px_30px_-5px_rgba(250,180,61,0.5)]">
-    
-    <!-- Reflet brillant au survol/clic -->
-    <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
-    
-    <span class="relative flex items-center justify-center gap-3 text-base md:text-lg uppercase tracking-[0.15em]">
-        Confirmer le don
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
-    </span>
-</button>
+                    <!-- Bouton de validation : Toujours à l'intérieur du formulaire et avec une marge basse -->
+                    <div class="pt-4 pb-2">
+                        <button type="submit" id="submitBtn"
+                            class="relative w-full group overflow-hidden bg-gradient-to-r from-[#FAB43D] to-[#FF9D2E] text-white font-black py-5 rounded-2xl shadow-[0_10px_25px_-5px_rgba(250,180,61,0.4)] transition-all duration-300 transform active:scale-[0.96]">
+                            
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
+                            
+                            <span class="relative flex items-center justify-center gap-3 text-base uppercase tracking-[0.15em]">
+                                Confirmer le don
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
