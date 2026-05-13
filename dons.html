@@ -266,11 +266,20 @@
                         </div>
                     </div>
 
-                    <!-- Bouton final -->
-                    <button type="submit" id="submitBtn"
-                        class="w-full bg-[#FAB43D] hover:bg-[#e8a32d] text-white font-black py-5 rounded-2xl shadow-xl shadow-orange-200 transition-all transform active:scale-95 text-base md:text-lg uppercase tracking-widest">
-                        Confirmer le don
-                    </button>
+                   <!-- Bouton de validation optimisé pour mobile -->
+<button type="submit" id="submitBtn"
+    class="relative w-full group overflow-hidden bg-gradient-to-r from-[#FAB43D] to-[#FF9D2E] text-white font-black py-5 rounded-2xl shadow-[0_10px_25px_-5px_rgba(250,180,61,0.4)] transition-all duration-300 transform active:scale-[0.96] hover:shadow-[0_15px_30px_-5px_rgba(250,180,61,0.5)]">
+    
+    <!-- Reflet brillant au survol/clic -->
+    <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
+    
+    <span class="relative flex items-center justify-center gap-3 text-base md:text-lg uppercase tracking-[0.15em]">
+        Confirmer le don
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+    </span>
+</button>
                 </form>
             </div>
         </div>
