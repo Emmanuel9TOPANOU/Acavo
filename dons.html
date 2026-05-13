@@ -141,7 +141,101 @@
     </section>
 
 
+<section class="py-10 md:py-24 bg-[#F8FAFB]">
+    <div class="max-w-4xl mx-auto px-4 md:px-6">
+        <!-- Correction : Remplacement de overflow-hidden par overflow-visible pour éviter de couper le bouton sur petit écran -->
+        <div class="bg-white shadow-2xl shadow-gray-200/60 rounded-[2rem] border border-gray-100 overflow-visible">
+            
+            <div class="p-6 md:p-12">
+                <h2 class="text-xl md:text-3xl font-extrabold text-[#53899A] text-center mb-8 leading-snug">
+                    Faites un don pour nous soutenir dans notre mission
+                </h2>
 
+                <form id="donationForm" class="space-y-6 md:space-y-8" onsubmit="return false;">
+                    <!-- Informations personnelles -->
+                    <div class="bg-[#F1F7F9] p-5 md:p-8 rounded-[1.5rem] md:rounded-[2rem] space-y-4">
+                        <p class="font-bold text-[#53899A] mb-2 uppercase text-[10px] tracking-widest opacity-80">Informations personnelles</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                            <input type="text" id="donorNom" required placeholder="Nom"
+                                class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
+                            <input type="text" id="donorPrenom" required placeholder="Prénom"
+                                class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
+                        </div>
+                        <input type="email" id="donorEmail" required placeholder="Email"
+                            class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
+                    </div>
+
+                    <!-- Moyen de paiement -->
+                    <div class="space-y-6">
+                        <p class="font-bold text-[#53899A] uppercase text-[10px] tracking-widest opacity-80">Moyen de paiement</p>
+
+                        <!-- Onglets responsifs -->
+                        <div class="flex bg-gray-100 p-1.5 rounded-2xl gap-1">
+                            <button type="button" id="btnMobile" onclick="switchTab('mobile')"
+                                class="flex-1 flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm font-bold text-xs transition-all text-[#53899A]">
+                                📱 Mobile Money
+                            </button>
+                            <button type="button" id="btnCard" onclick="switchTab('card')"
+                                class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-xs text-gray-500 hover:text-gray-700 transition-all">
+                                🌐 Carte / PayPal
+                            </button>
+                        </div>
+
+                        <!-- Vue Mobile Money -->
+                        <div id="viewMobile" class="space-y-6 animate-fade-in">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div onclick="selectOperator(this, 'MTN')" class="operator-card border-2 border-[#53899A] bg-[#F1F7F9] rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img20.png" alt="MTN" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">MTN</span>
+                                </div>
+                                <div onclick="selectOperator(this, 'Moov')" class="operator-card border-2 border-transparent bg-white rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img21.jpg" alt="Moov" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">Moov</span>
+                                </div>
+                                <div onclick="selectOperator(this, 'Celtiis')" class="operator-card border-2 border-transparent bg-white rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img22.png" alt="Celtiis" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">Celtiis</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 gap-4">
+                                <input type="tel" placeholder="Numéro de téléphone" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none bg-gray-50 text-sm">
+                                <input type="number" placeholder="Montant (FCFA)" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] bg-gray-50 text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Vue Carte -->
+                        <div id="viewCard" class="hidden animate-fade-in space-y-6">
+                            <div class="bg-gray-50 border border-gray-100 rounded-[1.5rem] p-5">
+                                <div class="space-y-4">
+                                    <input type="text" placeholder="Numéro de carte" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <input type="text" placeholder="MM / AA" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm text-center">
+                                        <input type="password" placeholder="CVV" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm text-center">
+                                    </div>
+                                    <input type="number" placeholder="Montant" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] text-sm">
+                                    <select class="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 outline-none font-bold text-gray-600 text-sm appearance-none">
+                                        <option>EUR - Euro (€)</option>
+                                        <option>USD - Dollar ($)</option>
+                                        <option>XOF - Franc CFA (CFA)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- PayPal Intégré proprement -->
+                            <div class="pt-2">
+                                <p class="text-[10px] text-gray-400 mb-3 text-center uppercase tracking-widest">Ou payer via</p>
+                                <button type="button" class="w-full bg-white border border-gray-200 py-4 rounded-xl flex items-center justify-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-6" alt="PayPal">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 <style>
     @keyframes fadeIn {
