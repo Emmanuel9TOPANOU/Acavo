@@ -22,73 +22,110 @@
 
 <body>
 
-    <!-- Navigation Principale Fixée -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
+  <!-- Navigation Principale Fixée -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-24">
 
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <img class="h-20 w-auto" src="src/assets/images/logo.png" alt="ACAVO Logo">
-                </div>
-
-                <!-- Navigation Desktop -->
-                <nav id="nav-menu" class="hidden md:flex items-center space-x-8">
-                    <a href="index.html"
-                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
-                        Accueil
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-
-                    <a href="a-propos.html"
-                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
-                        A propos
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-
-                    <a href="activites.html"
-                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
-                        Activités
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-
-                    <a href="galerie.html"
-                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
-                        Galerie
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-
-                    <a href="contact.html"
-                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
-                        Contact
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-
-                    <!-- Bouton de don (inchangé mais avec un hover plus vif) -->
-                    <a href="dons.html"
-                        class="bg-[#FAB43D] text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-orange-400 hover:scale-105 transition-all shadow-md">
-                        Faire un don
-                    </a>
-                </nav>
-
-                <!-- Bouton Menu Mobile (Hamburger) -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-[#53899A] focus:outline-none">
-                        <svg class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <img class="h-20 w-auto" src="src/assets/images/logo.png" alt="ACAVO Logo">
         </div>
 
-    </header>
+        <!-- Navigation Desktop -->
+        <nav id="nav-menu" class="hidden md:flex items-center space-x-8">
+          <a href="index.html"
+            class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+            Accueil
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <a href="a-propos.html"
+            class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+            A propos
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <a href="activites.html"
+            class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+            Activités
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <a href="galerie.html"
+            class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+            Galerie
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <a href="contact.html"
+            class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+            Contact
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- Bouton de don (inchangé mais avec un hover plus vif) -->
+          <a href="dons.html"
+            class="bg-[#FAB43D] text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-orange-400 hover:scale-105 transition-all shadow-md">
+            Faire un don
+          </a>
+        </nav>
+
+        <!-- Bouton Menu Mobile (Hamburger) -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-[#53899A] focus:outline-none">
+            <svg class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Sidebar Mobile (AJOUTE CE BLOC ICI) -->
+    <div id="mobile-sidebar" class="fixed inset-0 z-[60] invisible transition-all duration-300">
+      <!-- Overlay flouté -->
+      <div id="sidebar-overlay"
+        class="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+
+      <!-- Contenu de la Sidebar -->
+      <div id="sidebar-content"
+        class="absolute top-0 left-0 w-3/4 max-w-sm h-full bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out p-6">
+        <div class="flex justify-between items-center mb-8">
+          <img class="h-16 w-auto" src="src/assets/images/logo.png" alt="Logo">
+          <button id="close-sidebar" class="text-[#53899A]">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="flex flex-col space-y-6">
+          <a href="index.html"
+            class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">Accueil</a>
+          <a href="a-propos.html" class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">A
+            propos</a>
+          <a href="activites.html"
+            class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">Activités</a>
+          <a href="galerie.html"
+            class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">Galerie</a>
+          <a href="contact.html"
+            class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">Contact</a>
+
+          <a href="dons.html"
+            class="bg-[#FAB43D] text-white text-center px-6 py-4 rounded-xl font-bold text-lg shadow-lg">
+            Faire un don
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
     <section class="bg-[#53899A] py-24 px-6 text-center">
         <div class="max-w-4xl mx-auto">
