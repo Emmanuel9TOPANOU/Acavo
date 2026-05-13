@@ -137,86 +137,112 @@
         </div>
     </section>
 
+<section class="py-24 bg-[#F8FAFB]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-    <section class="py-24 bg-[#F8FAFB]">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-                <!-- Texte à gauche -->
-                <div class="space-y-8">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-bold text-[#53899A] mb-4">
-                            Chaque geste compte
-                        </h2>
-                        <div class="h-1.5 w-20 bg-[#FAB43D] rounded-full"></div>
-                    </div>
-
-                    <h3 class="text-2xl md:text-3xl text-[#53899A]/80 font-semibold leading-snug">
-                        Un simple geste peut transformer une vie
-                    </h3>
-
-                    <div class="space-y-4">
-                        <p class="text-xl text-[#53899A] font-medium">Avez-vous des préoccupations ?</p>
-                        <p class="text-lg text-gray-500">Contactez-nous via le formulaire ou</p>
-                        <p class="text-xl text-[#53899A] font-bold flex items-center gap-3">
-                            <span class="p-2 bg-[#53899A]/10 rounded-lg">
-                                <!-- Icone téléphone -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                            </span>
-                            Appelez-nous au : +229 01 97 08 19 73
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Formulaire Premium -->
-                <div
-                    class="bg-white p-8 md:p-12 rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
-                    <form id="whatsappForm" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-[#53899A] font-bold ml-1">Nom</label>
-                                <input type="text" id="nom" required placeholder="DAMI"
-                                    class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#53899A] focus:ring-2 focus:ring-[#53899A]/10 transition-all">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-[#53899A] font-bold ml-1">Prénom</label>
-                                <input type="text" id="prenom" required placeholder="Jacques"
-                                    class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#53899A] focus:ring-2 focus:ring-[#53899A]/10 transition-all">
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-[#53899A] font-bold ml-1">Objet</label>
-                            <input type="text" id="objet" required placeholder="Sujet de votre message"
-                                class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#53899A] focus:ring-2 focus:ring-[#53899A]/10 transition-all">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-[#53899A] font-bold ml-1">Message</label>
-                            <textarea id="message" required rows="4" placeholder="Votre message ici..."
-                                class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#53899A] focus:ring-2 focus:ring-[#53899A]/10 transition-all resize-none"></textarea>
-                        </div>
-
-                        <div class="pt-4">
-                            <button type="button" onclick="sendToWhatsApp()"
-                                class="w-full md:w-auto px-12 py-4 bg-[#FAB43D] text-white font-bold text-lg rounded-2xl shadow-lg shadow-orange-200 hover:bg-orange-400 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
-                                <span>Soumettre</span>
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.82c1.516.903 3.14 1.38 4.816 1.381 5.404.001 9.805-4.4 9.808-9.804.001-2.618-1.02-5.079-2.877-6.938-1.857-1.857-4.318-2.878-6.935-2.879-5.405 0-9.806 4.401-9.809 9.806 0 1.742.459 3.44 1.329 4.937l-1.03 3.763 3.864-1.013zm11.366-7.412c-.311-.156-1.845-.91-2.134-1.015-.289-.105-.499-.156-.709.156-.21.312-.813 1.015-1 1.226-.186.211-.373.238-.684.082-.311-.156-1.313-.484-2.502-1.543-.925-.824-1.548-1.841-1.73-2.152-.182-.312-.019-.481.136-.635.141-.138.311-.362.467-.544.156-.181.208-.311.311-.519.105-.207.052-.389-.026-.544-.078-.156-.709-1.71-.971-2.34-.255-.615-.516-.531-.709-.541-.183-.009-.394-.011-.605-.011-.21 0-.551.078-.84.389-.289.311-1.103 1.077-1.103 2.628 0 1.551 1.13 3.048 1.287 3.256.157.208 2.224 3.397 5.388 4.761.752.324 1.339.518 1.797.663.756.24 1.444.206 1.988.125.606-.09 1.845-.754 2.107-1.442.263-.688.263-1.277.184-1.403-.078-.126-.289-.208-.6-.364z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
+      <!-- Texte à gauche -->
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#53899A] mb-4">
+            Chaque geste compte
+          </h2>
+          <div class="h-1.5 w-20 bg-[#FAB43D] rounded-full"></div>
         </div>
-    </section>
+
+        <h3 class="text-2xl md:text-3xl text-[#53899A]/80 font-semibold leading-snug">
+          Un simple geste peut transformer une vie
+        </h3>
+
+        <div class="space-y-4">
+          <p class="text-xl text-[#53899A] font-medium">Avez-vous des préoccupations ?</p>
+          <p class="text-lg text-gray-500">Contactez-nous via le formulaire ou</p>
+          <p class="text-xl text-[#53899A] font-bold flex items-center gap-3">
+            <span class="p-2 bg-[#53899A]/10 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </span>
+            Appelez-nous au : +229 01 97 08 19 73
+          </p>
+        </div>
+      </div>
+
+      <!-- Formulaire Premium -->
+      <div class="bg-white p-8 md:p-12 rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
+        <form id="whatsappForm" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-[#53899A] font-bold ml-1">Nom</label>
+              <input type="text" id="nom" required placeholder="Votre nom...."
+                class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#53899A] focus:ring-2 focus:ring-[#53899A]/10 transition-all">
+            </div>
+            <div class="space-y-2">
+              <label class="text-[#53899A] font-bold ml-1">Prénom</label>
+              <input type="text" id="prenom" required placeholder="Votre prénom...."
+                class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#53899A] focus:ring-2 focus:ring-[#53899A]/10 transition-all">
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-[#53899A] font-bold ml-1">Objet</label>
+            <input type="text" id="objet" required placeholder="Sujet de votre message"
+              class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#53899A] focus:ring-2 focus:ring-[#53899A]/10 transition-all">
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-[#53899A] font-bold ml-1">Message</label>
+            <textarea id="message" required rows="4" placeholder="Votre message ici..."
+              class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#53899A] focus:ring-2 focus:ring-[#53899A]/10 transition-all resize-none"></textarea>
+          </div>
+
+          <div class="pt-4">
+            <button type="button" onclick="sendToWhatsApp()"
+              class="w-full md:w-auto px-12 py-4 bg-[#FAB43D] text-white font-bold text-lg rounded-2xl shadow-lg shadow-orange-200 hover:bg-orange-400 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
+              <span>Soumettre</span>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.82c1.516.903 3.14 1.38 4.816 1.381 5.404.001 9.805-4.4 9.808-9.804.001-2.618-1.02-5.079-2.877-6.938-1.857-1.857-4.318-2.878-6.935-2.879-5.405 0-9.806 4.401-9.809 9.806 0 1.742.459 3.44 1.329 4.937l-1.03 3.763 3.864-1.013zm11.366-7.412c-.311-.156-1.845-.91-2.134-1.015-.289-.105-.499-.156-.709.156-.21.312-.813 1.015-1 1.226-.186.211-.373.238-.684.082-.311-.156-1.313-.484-2.502-1.543-.925-.824-1.548-1.841-1.73-2.152-.182-.312-.019-.481.136-.635.141-.138.311-.362.467-.544.156-.181.208-.311.311-.519.105-.207.052-.389-.026-.544-.078-.156-.709-1.71-.971-2.34-.255-.615-.516-.531-.709-.541-.183-.009-.394-.011-.605-.011-.21 0-.551.078-.84.389-.289.311-1.103 1.077-1.103 2.628 0 1.551 1.13 3.048 1.287 3.256.157.208 2.224 3.397 5.388 4.761.752.324 1.339.518 1.797.663.756.24 1.444.206 1.988.125.606-.09 1.845-.754 2.107-1.442.263-.688.263-1.277.184-1.403-.078-.126-.289-.208-.6-.364z" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>   
+
+
+<script>
+function sendToWhatsApp() {
+  // Récupération des données
+  const nom = document.getElementById('nom').value.trim();
+  const prenom = document.getElementById('prenom').value.trim();
+  const objet = document.getElementById('objet').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  // Vérification simple
+  if (!nom || !prenom || !objet || !message) {
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
+
+  // Configuration du numéro (Bénin)
+  const phone = "2290160613363";
+
+  // Construction du message (encodé pour URL)
+  // *Texte* = Gras sur WhatsApp
+  const finalMessage = `Nouveau message via le site web%0A%0A` +
+                       `Expéditeur: ${nom} ${prenom}%0A` +
+                       `Objet:* ${objet}%0A%0A` +
+                       `Message:*%0A${message}`;
+
+  const whatsappUrl = `https://wa.me/${phone}?text=${finalMessage}`;
+
+  // Redirection
+  window.open(whatsappUrl, '_blank');
+}
+</script>
 
     <footer class="bg-[#53899A] text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
