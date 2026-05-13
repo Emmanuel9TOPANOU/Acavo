@@ -1,0 +1,178 @@
+/* Importation de la police Poppins via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* --- CONFIGURATION GLOBALE --- */
+
+html,
+body {
+    /* Empêche le défilement horizontal indésirable */
+    overflow-x: hidden;
+    /* Force la largeur à 100% de l'écran */
+    width: 100%;
+}
+
+body.aos-animate {
+    /* Sécurité supplémentaire pour les animations AOS */
+    overflow-x: hidden !important;
+}
+
+
+
+
+/* Application de la police Poppins à tout le texte */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+/* Styles pour le lien actif desktop */
+.nav-link.active {
+    position: relative;
+    color: #FAB43D !important;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #FAB43D;
+    border-radius: 2px;
+}
+
+/* Styles pour le lien actif mobile */
+.mobile-nav-link.active {
+    background-color: rgba(250, 180, 61, 0.1);
+    color: #FAB43D !important;
+    border-left: 3px solid #FAB43D;
+}
+
+/* Transition pour le menu mobile */
+#mobileMenu {
+    transition: transform 0.3s ease-out;
+}
+
+/* Amélioration du focus pour l'accessibilité */
+.nav-link:focus-visible,
+.mobile-nav-link:focus-visible,
+button:focus-visible {
+    outline: 2px solid #FAB43D;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.mobile-menu-open {
+    animation: slideIn 0.3s ease-out;
+}
+
+.overlay-open {
+    animation: fadeIn 0.3s ease-out;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
+    .animate-fade-in-delay-1 { animation: fadeInUp 0.8s ease 0.2s forwards; }
+    .animate-fade-in-delay-2 { animation: fadeInUp 0.8s ease 0.4s forwards; }
+    .animate-fade-in-delay-3 { animation: fadeInUp 0.8s ease 0.6s forwards; }
+
+
+
+/* Classe pour le lien actif */
+.active-link {
+    color: #FAB43D !important;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
+}
+
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .delay-200 { animation-delay: 0.2s; opacity: 0; }
+  .delay-500 { animation-delay: 0.5s; opacity: 0; }
+
+
+
+  
