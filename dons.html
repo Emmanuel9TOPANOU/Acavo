@@ -226,24 +226,36 @@
                                         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-4">
                                     </div>
                                 </div>
-                                <div class="space-y-4">
-                                    <input type="text" placeholder="Numéro de carte"
-                                        class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm">
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <input type="text" placeholder="MM / AA"
-                                            class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm text-center">
-                                        <input type="password" placeholder="CVV"
-                                            class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm text-center">
-                                    </div>
-                                    <div class="flex gap-2">
-                                        <input type="number" placeholder="Montant"
-                                            class="flex-1 px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] text-sm">
-                                        <select class="bg-white border border-gray-200 rounded-xl px-3 py-4 outline-none font-bold text-gray-600 text-xs">
-                                            <option>EUR €</option>
-                                            <option>USD $</option>
-                                        </select>
-                                    </div>
-                                </div>
+                              <div class="space-y-4">
+    <!-- Numéro de carte -->
+    <input type="text" placeholder="Numéro de carte"
+        class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm transition-all">
+
+    <!-- Date et CVV -->
+    <div class="grid grid-cols-2 gap-4">
+        <input type="text" placeholder="MM / AA"
+            class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm text-center transition-all">
+        <input type="password" placeholder="CVV"
+            class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none focus:border-[#53899A] text-sm text-center transition-all">
+    </div>
+
+    <!-- Montant (Pleine largeur) -->
+    <div class="space-y-2">
+        <label class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Montant du don</label>
+        <input type="number" placeholder="Entrez le montant"
+            class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] text-sm transition-all bg-white">
+    </div>
+
+    <!-- Choix de la Devise (Pleine largeur pour plus de clarté) -->
+    <div class="space-y-2">
+        <label class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Devise</label>
+        <select class="w-full bg-white border border-gray-200 rounded-xl px-5 py-4 outline-none font-bold text-gray-600 text-sm cursor-pointer focus:border-[#53899A] transition-all appearance-none">
+            <option>EUR - Euro (€)</option>
+            <option>USD - Dollar ($)</option>
+            <option>XOF - Franc CFA (CFA)</option>
+        </select>
+    </div>
+</div>
                             </div>
                             <div class="text-center">
                                 <p class="text-[10px] text-gray-400 mb-4 uppercase tracking-[0.2em]">Paiement express</p>
