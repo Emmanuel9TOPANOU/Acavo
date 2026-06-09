@@ -1,135 +1,178 @@
-  /* Définition de l'animation de défilement */
-      @keyframes marquee {
-          0% {
-              transform: translateX(0%);
-          }
-          100% {
-              transform: translateX(-50%); /* Défile la moitié de la largeur pour la boucle */
-          }
-      }
+/* Importation de la police Poppins via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* --- CONFIGURATION GLOBALE --- */
 
-      /* Classe à appliquer au conteneur des logos pour lancer l'animation */
-      .animate-marquee-css {
-          animation: marquee 60s linear infinite; /* 60s = vitesse lente, linear = pas d'accélération/décélération, infinite = boucle sans fin */
-      }
+html,
+body {
+    /* Empêche le défilement horizontal indésirable */
+    overflow-x: hidden;
+    /* Force la largeur à 100% de l'écran */
+    width: 100%;
+}
+
+body.aos-animate {
+    /* Sécurité supplémentaire pour les animations AOS */
+    overflow-x: hidden !important;
+}
 
 
 
 
-       /* ------------------------------------------- */
-    /* NOUVELLE ANIMATION pour la Navigation Active */
-    /* ------------------------------------------- */
+/* Application de la police Poppins à tout le texte */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
 
-    /* Classe pour le lien actif */
-    .active-link {
-        color: #079402; /* Couleur de texte grise/noire (simule le texte non-souligné de l'image) */
-        position: relative; /* Nécessaire pour positionner le soulignement */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 
-    /* Crée le soulignement après le lien actif */
-    .active-link::after {
-        content: ''; /* Contenu vide requis pour ::after */
-        position: absolute;
-        bottom: -5px; /* Positionne la ligne sous le texte */
-        left: 0;
-        width: 100%; /* La ligne couvre toute la largeur du lien */
-        height: 3px; /* Épaisseur de la ligne */
-        background-color: #048615; /* Couleur du soulignement (simule le vert-jaune de votre image) */
-        /* Animation d'apparition : la ligne se "dessine" de la gauche vers la droite */
-        transform: scaleX(1);
-        transform-origin: bottom left;
-        transition: transform 0.3s ease-out; /* Douceur de l'animation */
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+/* Styles pour le lien actif desktop */
+.nav-link.active {
+    position: relative;
+    color: #FAB43D !important;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #FAB43D;
+    border-radius: 2px;
+}
+
+/* Styles pour le lien actif mobile */
+.mobile-nav-link.active {
+    background-color: rgba(250, 180, 61, 0.1);
+    color: #FAB43D !important;
+    border-left: 3px solid #FAB43D;
+}
+
+/* Transition pour le menu mobile */
+#mobileMenu {
+    transition: transform 0.3s ease-out;
+}
+
+/* Amélioration du focus pour l'accessibilité */
+.nav-link:focus-visible,
+.mobile-nav-link:focus-visible,
+button:focus-visible {
+    outline: 2px solid #FAB43D;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
     }
 
-   
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
-
-
-            /* Définitions des polices personnalisées */
-
-        .font-lora {
-            font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
-        }
-
-        .font-montserrat {
-            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-        }
-
-
-
-              /* ------------------------------------------- */
-        /* NOUVELLES ANIMATIONS POUR LA SECTION HÉRO */
-        /* ------------------------------------------- */
-
-        /* 1. Zoom Lent sur l'image (Slow Zoom) */
-        @keyframes slowZoom {
-            0% {
-                transform: scale(1); /* Taille normale au début */
-            }
-            100% {
-                transform: scale(1.1); /* Zoom de 10% à la fin */
-            }
-        }
-
-        .animate-slow-zoom {
-            animation: slowZoom 30s ease-out forwards; /* 30 secondes pour un zoom très lent et subtil */
-        }
-
-        /* 2. Apparition en fondu et glissant vers le haut (Fade Up) */
-        @keyframes fadeUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px); /* Commence 20px plus bas */
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0); /* Finit à sa position normale */
-            }
-        }
-
-        .animate-fadeUp {
-            animation: fadeUp 1s ease-out forwards; /* Dure 1 seconde, reste à la fin */
-        }
-
-        /* 3. Apparition avec délai (Fade Up Delay) */
-        .animate-fadeUp-delay {
-            /* Utilise la même animation, mais avec un délai de 0.5s */
-            animation: fadeUp 1s ease-out forwards;
-            animation-delay: 0.5s; 
-        }
-        
-
-
-
-
-        
-             /* ------------------------------------------- */
-    /* NOUVELLES ANIMATIONS POUR LA SECTION STATS */
-    /* ------------------------------------------- */
-
-    /* Keyframes pour l'apparition progressive */
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 
-    /* Classe de base pour l'apparition */
-    .animate-fade-in {
-        animation: fadeIn 0.8s ease-out forwards;
+    to {
+        opacity: 1;
     }
+}
 
-    /* Classe d'apparition avec délai (utilise les mêmes keyframes, juste une classe utilitaire) */
-    .animate-fade-in-delay {
-        animation: fadeIn 0.8s ease-out forwards;
-    }
+.mobile-menu-open {
+    animation: slideIn 0.3s ease-out;
+}
 
-    /* Optionnel: Ajoutez une petite marge sous chaque bloc pour l'alignement sans le séparateur */
-    .flex-col > .flex-col:not(:last-child) {
-        margin-bottom: 1rem; /* Marge entre les blocs en mode mobile */
-    }
+.overlay-open {
+    animation: fadeIn 0.3s ease-out;
+}
 
-    @media (min-width: 768px) {
-        .flex-col > .flex-col:not(:last-child) {
-            margin-bottom: 0; /* Pas de marge en mode desktop */
+body.menu-open {
+    overflow: hidden;
+}
+
+
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
+
+    .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
+    .animate-fade-in-delay-1 { animation: fadeInUp 0.8s ease 0.2s forwards; }
+    .animate-fade-in-delay-2 { animation: fadeInUp 0.8s ease 0.4s forwards; }
+    .animate-fade-in-delay-3 { animation: fadeInUp 0.8s ease 0.6s forwards; }
+
+
+
+/* Classe pour le lien actif */
+.active-link {
+    color: #FAB43D !important;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
+}
+
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .delay-200 { animation-delay: 0.2s; opacity: 0; }
+  .delay-500 { animation-delay: 0.5s; opacity: 0; }
+
+
+
+  

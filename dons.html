@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACAVO</title>
+    <link rel="stylesheet" href="src/css/output.css" />
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="icon" type="image/png" href="src/assets/images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@latest/dist/css/phosphor.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+
+<body>
+
+    <!-- Navigation Principale Fixée -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-20 w-auto" src="src/assets/images/logo.png" alt="ACAVO Logo">
+                </div>
+
+                <!-- Navigation Desktop -->
+                <nav id="nav-menu" class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+                        Accueil
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+
+                    <a href="a-propos.html"
+                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+                        A propos
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+
+                    <a href="activites.html"
+                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+                        Activités
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+
+                    <a href="galerie.html"
+                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+                        Galerie
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+
+                    <a href="contact.html"
+                        class="nav-link text-[#53899A] hover:text-[#FAB43D] font-semibold text-lg transition-all relative pb-1 group">
+                        Contact
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FAB43D] transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+
+                    <!-- Bouton de don (inchangé mais avec un hover plus vif) -->
+                    <a href="dons.html"
+                        class="bg-[#FAB43D] text-white px-8 py-3 rounded-2xl font-bold text-lg hover:bg-orange-400 hover:scale-105 transition-all shadow-md">
+                        Faire un don
+                    </a>
+                </nav>
+
+                <!-- Bouton Menu Mobile (Hamburger) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-[#53899A] focus:outline-none">
+                        <svg class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Sidebar Mobile (AJOUTE CE BLOC ICI) -->
+        <div id="mobile-sidebar" class="fixed inset-0 z-[60] invisible transition-all duration-300">
+            <!-- Overlay flouté -->
+            <div id="sidebar-overlay"
+                class="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+
+            <!-- Contenu de la Sidebar -->
+            <div id="sidebar-content"
+                class="absolute top-0 left-0 w-3/4 max-w-sm h-full bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <img class="h-16 w-auto" src="src/assets/images/logo.png" alt="Logo">
+                    <button id="close-sidebar" class="text-[#53899A]">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col space-y-6">
+                    <a href="index.html"
+                        class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">Accueil</a>
+                    <a href="a-propos.html"
+                        class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">A
+                        propos</a>
+                    <a href="activites.html"
+                        class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">Activités</a>
+                    <a href="galerie.html"
+                        class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">Galerie</a>
+                    <a href="contact.html"
+                        class="nav-link text-[#53899A] font-semibold text-xl border-b border-gray-100 pb-2">Contact</a>
+
+                    <a href="dons.html"
+                        class="bg-[#FAB43D] text-white text-center px-6 py-4 rounded-xl font-bold text-lg shadow-lg">
+                        Faire un don
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-[#53899A] py-24 px-6 text-center">
+        <div class="max-w-7xl mx-auto">
+
+            <h1 class="text-4xl md:text-5xl font-bold text-white mt-15 leading-tight">
+                Faire un don
+            </h1>
+
+        </div>
+    </section>
+
+
+<section class="py-10 md:py-24 bg-[#F8FAFB]">
+    <div class="max-w-4xl mx-auto px-4 md:px-6">
+        <!-- Correction : Ajout de pb-10 pour donner de l'espace au bouton en bas -->
+        <div class="bg-white shadow-2xl shadow-gray-200/60 rounded-[2rem] border border-gray-100 overflow-visible mb-10">
+            
+            <div class="p-6 md:p-12">
+                <h2 class="text-xl md:text-3xl font-extrabold text-[#53899A] text-center mb-8 leading-snug">
+                    Faites un don pour nous soutenir dans notre mission
+                </h2>
+
+                <!-- Correction : min-height pour s'assurer que le formulaire a de la place -->
+                <form id="donationForm" class="space-y-6 md:space-y-8 flex flex-col" style="min-height: 500px;" onsubmit="return false;">
+                    <!-- Informations personnelles -->
+                    <div class="bg-[#F1F7F9] p-5 md:p-8 rounded-[1.5rem] md:rounded-[2rem] space-y-4">
+                        <p class="font-bold text-[#53899A] mb-2 uppercase text-[10px] tracking-widest opacity-80">Informations personnelles</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                            <input type="text" id="donorNom" required placeholder="Nom"
+                                class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
+                            <input type="text" id="donorPrenom" required placeholder="Prénom"
+                                class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
+                        </div>
+                        <input type="email" id="donorEmail" required placeholder="Email"
+                            class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-[#FAB43D] focus:ring-2 focus:ring-orange-100 outline-none transition-all text-sm">
+                    </div>
+
+                    <!-- Moyen de paiement -->
+                    <div class="space-y-6">
+                        <p class="font-bold text-[#53899A] uppercase text-[10px] tracking-widest opacity-80">Moyen de paiement</p>
+
+                        <div class="flex bg-gray-100 p-1.5 rounded-2xl gap-1">
+                            <button type="button" id="btnMobile" onclick="switchTab('mobile')"
+                                class="flex-1 flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm font-bold text-xs transition-all text-[#53899A]">
+                                📱 Mobile Money
+                            </button>
+                            <button type="button" id="btnCard" onclick="switchTab('card')"
+                                class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-xs text-gray-500 hover:text-gray-700 transition-all">
+                                🌐 Carte / PayPal
+                            </button>
+                        </div>
+
+                        <!-- Vue Mobile Money -->
+                        <div id="viewMobile" class="space-y-6 animate-fade-in">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div onclick="selectOperator(this, 'MTN')" class="operator-card border-2 border-[#53899A] bg-[#F1F7F9] rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img20.png" alt="MTN" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">MTN</span>
+                                </div>
+                                <div onclick="selectOperator(this, 'Moov')" class="operator-card border-2 border-transparent bg-white rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img21.jpg" alt="Moov" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">Moov</span>
+                                </div>
+                                <div onclick="selectOperator(this, 'Celtiis')" class="operator-card border-2 border-transparent bg-white rounded-2xl p-3 flex flex-col items-center gap-2 cursor-pointer shadow-sm">
+                                    <img src="src/assets/images/img22.png" alt="Celtiis" class="h-8 w-auto object-contain">
+                                    <span class="text-[8px] font-black text-gray-600 uppercase text-center">Celtiis</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 gap-4">
+                                <input type="tel" placeholder="Numéro de téléphone" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none bg-gray-50 text-sm">
+                                <input type="number" placeholder="Montant (FCFA)" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] bg-gray-50 text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Vue Carte (Cachée par défaut) -->
+                        <div id="viewCard" class="hidden animate-fade-in space-y-6">
+                            <div class="bg-gray-50 border border-gray-100 rounded-[1.5rem] p-5">
+                                <div class="space-y-4">
+                                    <input type="text" placeholder="Numéro de carte" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <input type="text" placeholder="MM / AA" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm text-center">
+                                        <input type="password" placeholder="CVV" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none text-sm text-center">
+                                    </div>
+                                    <input type="number" placeholder="Montant" class="w-full px-5 py-4 rounded-xl border border-gray-200 outline-none font-bold text-[#53899A] text-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bouton de validation final corrigé -->
+                    <div class="pt-10">
+                        <button type="submit" 
+                            class="w-full bg-[#FAB43D] hover:bg-[#FF9D2E] text-white font-black py-5 rounded-2xl shadow-xl transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-3 uppercase tracking-widest text-base">
+                            Confirmer le don
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+        animation: fadeIn 0.4s ease-out forwards;
+    }
+    @media (max-width: 380px) {
+        .xs\:hidden { display: block; }
+        .xs\:inline { display: none; }
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+   <script>
+    function switchTab(type) {
+        const btnMobile = document.getElementById('btnMobile');
+        const btnCard = document.getElementById('btnCard');
+        const viewMobile = document.getElementById('viewMobile');
+        const viewCard = document.getElementById('viewCard');
+
+        const activeClasses = "flex-1 flex items-center justify-center gap-2 bg-white py-3 md:py-4 rounded-xl shadow-sm font-bold text-xs md:text-sm transition-all text-[#53899A]";
+        const inactiveClasses = "flex-1 flex items-center justify-center gap-2 py-3 md:py-4 rounded-xl font-bold text-xs md:text-sm text-gray-500 hover:text-gray-700 transition-all";
+
+        if (type === 'mobile') {
+            btnMobile.className = activeClasses;
+            btnCard.className = inactiveClasses;
+            viewMobile.classList.remove('hidden');
+            viewCard.classList.add('hidden');
+        } else {
+            btnCard.className = activeClasses;
+            btnMobile.className = inactiveClasses;
+            viewCard.classList.remove('hidden');
+            viewMobile.classList.add('hidden');
+        }
+    }
+
+    function selectOperator(element, name) {
+        document.querySelectorAll('.operator-card').forEach(card => {
+            card.className = "operator-card border-2 border-transparent bg-white rounded-2xl p-3 md:p-5 flex flex-col items-center gap-2 cursor-pointer hover:border-gray-200 transition-all shadow-sm";
+        });
+        element.className = "operator-card border-2 border-[#53899A] bg-[#F1F7F9] rounded-2xl p-3 md:p-5 flex flex-col items-center gap-2 cursor-pointer transition-all shadow-sm";
+        document.getElementById('labelNumber').innerText = 'Numéro ' + name;
+    }
+
+    // Le reste de vos fonctions (handlePayPal, onsubmit) reste identique
+</script>
+
+
+
+
+
+
+
+
+    <footer class="bg-[#53899A] text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <div class="space-y-6">
+                    <div class="bg-white p-3 rounded-xl inline-block">
+                        <img src="src/assets/images/logo.png" alt="ACAVO Logo" class="h-12 w-auto">
+                    </div>
+                    <p class="text-white/80 leading-relaxed">
+                        L'Association de la Compassion à l'Endroit des Affligés, des Veuves et des Orphelins (ACAVO)
+                        œuvre pour
+                        redonner espoir et dignité aux plus vulnérables.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-b-2 border-[#FAB43D] inline-block pb-1">Liens Rapides</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="hover:text-[#FAB43D] transition-colors">Accueil</a></li>
+                        <li><a href="a-propos.html" class="hover:text-[#FAB43D] transition-colors">À propos</a></li>
+                        <li><a href="activites.html" class="hover:text-[#FAB43D] transition-colors">Nos Activités</a>
+                        </li>
+                        <li><a href="galerie.html" class="hover:text-[#FAB43D] transition-colors">Galerie</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-b-2 border-[#FAB43D] inline-block pb-1">Contact</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-[#FAB43D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Cotonou, Bénin</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-6 h-6 text-[#FAB43D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>+229 01 97 08 19 73</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-b-2 border-[#FAB43D] inline-block pb-1">Suivez-nous</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="bg-white/10 p-3 rounded-full hover:bg-[#FAB43D] transition-all flex items-center justify-center">
+                            <i class="ph ph-facebook-logo text-2xl"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 p-3 rounded-full hover:bg-[#FAB43D] transition-all flex items-center justify-center">
+                            <i class="ph ph-instagram-logo text-2xl"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 p-3 rounded-full hover:bg-[#FAB43D] transition-all flex items-center justify-center">
+                            <i class="ph ph-x-logo text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
+                <p>© 2025 ACAVO. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="src/scripts/script-index.js"></script>
+
+
+
+
+</body>
+
+</html>
